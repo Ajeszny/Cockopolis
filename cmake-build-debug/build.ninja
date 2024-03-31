@@ -67,6 +67,30 @@ build CMakeFiles/Cockopolis.dir/texture.cpp.o: CXX_COMPILER__Cockopolis_unscanne
   OBJECT_DIR = CMakeFiles/Cockopolis.dir
   OBJECT_FILE_DIR = CMakeFiles/Cockopolis.dir
 
+build CMakeFiles/Cockopolis.dir/player.cpp.o: CXX_COMPILER__Cockopolis_unscanned_Debug /home/ajeszny/CLionProjects/Cockopolis/player.cpp || cmake_object_order_depends_target_Cockopolis
+  DEP_FILE = CMakeFiles/Cockopolis.dir/player.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Cockopolis.dir
+  OBJECT_FILE_DIR = CMakeFiles/Cockopolis.dir
+
+build CMakeFiles/Cockopolis.dir/map.cpp.o: CXX_COMPILER__Cockopolis_unscanned_Debug /home/ajeszny/CLionProjects/Cockopolis/map.cpp || cmake_object_order_depends_target_Cockopolis
+  DEP_FILE = CMakeFiles/Cockopolis.dir/map.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Cockopolis.dir
+  OBJECT_FILE_DIR = CMakeFiles/Cockopolis.dir
+
+build CMakeFiles/Cockopolis.dir/tile.cpp.o: CXX_COMPILER__Cockopolis_unscanned_Debug /home/ajeszny/CLionProjects/Cockopolis/tile.cpp || cmake_object_order_depends_target_Cockopolis
+  DEP_FILE = CMakeFiles/Cockopolis.dir/tile.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Cockopolis.dir
+  OBJECT_FILE_DIR = CMakeFiles/Cockopolis.dir
+
+build CMakeFiles/Cockopolis.dir/hood.cpp.o: CXX_COMPILER__Cockopolis_unscanned_Debug /home/ajeszny/CLionProjects/Cockopolis/hood.cpp || cmake_object_order_depends_target_Cockopolis
+  DEP_FILE = CMakeFiles/Cockopolis.dir/hood.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Cockopolis.dir
+  OBJECT_FILE_DIR = CMakeFiles/Cockopolis.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Cockopolis
@@ -75,7 +99,7 @@ build CMakeFiles/Cockopolis.dir/texture.cpp.o: CXX_COMPILER__Cockopolis_unscanne
 #############################################
 # Link the executable Cockopolis
 
-build Cockopolis: CXX_EXECUTABLE_LINKER__Cockopolis_Debug CMakeFiles/Cockopolis.dir/main.cpp.o CMakeFiles/Cockopolis.dir/window.cpp.o CMakeFiles/Cockopolis.dir/texture.cpp.o
+build Cockopolis: CXX_EXECUTABLE_LINKER__Cockopolis_Debug CMakeFiles/Cockopolis.dir/main.cpp.o CMakeFiles/Cockopolis.dir/window.cpp.o CMakeFiles/Cockopolis.dir/texture.cpp.o CMakeFiles/Cockopolis.dir/player.cpp.o CMakeFiles/Cockopolis.dir/map.cpp.o CMakeFiles/Cockopolis.dir/tile.cpp.o CMakeFiles/Cockopolis.dir/hood.cpp.o
   FLAGS = -g
   LINK_LIBRARIES = -lSDL2main  -lSDL2  -lSDL2_image
   OBJECT_DIR = CMakeFiles/Cockopolis.dir

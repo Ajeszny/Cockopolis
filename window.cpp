@@ -14,7 +14,7 @@ void Window::show() {
     SDL_RenderClear(_renderer);
     //Here goes placing logic
     for (auto & texture : textures) {
-        SDL_RenderCopy(_renderer, texture.get_texture(), 0, texture.get_rect());
+        SDL_RenderCopy(_renderer, texture.get_texture(), nullptr, texture.get_rect());
     }
     textures.clear();
     SDL_RenderPresent(_renderer);
@@ -32,4 +32,22 @@ Window::~Window() {
     textures.clear();
     SDL_DestroyRenderer(_renderer);
     SDL_DestroyWindow(_window);
+}
+
+SDL_Point Window::poll_input() const {
+    if (_event.type == SDL_KEYDOWN) {
+        switch (_event.key.keysym.sym) {
+            case SDLK_w:
+                return {0, -1};
+            case SDLK_a:
+                return {-1, 0};
+            case SDLK_s:
+                return {0, 1};
+            case SDLK_d:
+                return {1, 0};
+            default:
+                return {0, 0};
+        }
+    }
+    return {0, 0};
 }

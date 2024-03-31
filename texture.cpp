@@ -11,6 +11,9 @@ Texture::~Texture() {
 Texture::Texture(SDL_Renderer* r, const char *path, int x, int y, int w, int h) {
     _area = {x, y, w, h};
     _texture = IMG_LoadTexture(r, path);
+    if (!_texture) {
+        printf("WSZYSTKO POSZŁO W PIZDĘ!!! %s", SDL_GetError());
+    }
 }
 
 SDL_Texture *Texture::get_texture() {
@@ -20,3 +23,5 @@ SDL_Texture *Texture::get_texture() {
 SDL_Rect *Texture::get_rect() {
     return &_area;
 }
+
+

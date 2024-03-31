@@ -6,6 +6,9 @@
 #define COCKOPOLIS_WINDOW_H
 #include "includes.h"
 #include "texture.h"
+#define DEFAULT_W 640
+#define DEFAULT_H 512
+#define DEFAULT_FRAME (DEFAULT_W/NUM_HORIZONTAL_FRAMES)
 
 class Window {
 private:
@@ -19,6 +22,7 @@ public:
     void show();
     [[nodiscard]] bool listen_for_end() const;
     void push(const string& path, SDL_Rect pos);
+    SDL_Point poll_input() const;
 };
 
 

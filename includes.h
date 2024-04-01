@@ -14,6 +14,16 @@
 #define NUM_HORIZONTAL_FRAMES 10
 #define NUM_VERTICAL_FRAMES 8
 
+struct __attribute__((packed)) tile_saveable {
+    char tpath[256];
+    int color;
+    int type;
+};
+
+struct __attribute__((packed)) map_file {
+  tile_saveable tiles[NUM_VERTICAL_FRAMES][NUM_HORIZONTAL_FRAMES];
+};
+
 using std::string;
 namespace hood_card_descr {
     enum hood_color {

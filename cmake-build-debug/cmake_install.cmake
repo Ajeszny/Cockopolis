@@ -1,4 +1,4 @@
-# Install script for directory: /home/ajeszny/CLionProjects/Cockopolis
+# Install script for directory: /home/ajeszny/CLionProjects/map_editor
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ajeszny/CLionProjects/Cockopolis/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ajeszny/CLionProjects/map_editor/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

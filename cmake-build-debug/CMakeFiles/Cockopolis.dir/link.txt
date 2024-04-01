@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/Cockopolis.dir/main.cpp.o CMakeFiles/Cockopolis.dir/window.cpp.o CMakeFiles/Cockopolis.dir/texture.cpp.o CMakeFiles/Cockopolis.dir/player.cpp.o CMakeFiles/Cockopolis.dir/map.cpp.o CMakeFiles/Cockopolis.dir/tile.cpp.o CMakeFiles/Cockopolis.dir/hood.cpp.o -o Cockopolis  -lSDL2main -lSDL2 -lSDL2_image 

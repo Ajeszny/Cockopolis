@@ -24,6 +24,7 @@ int main(int argc, char* argv[]) {
         }
         w.push(p.get_texture_path(), {p.get_x()*DEFAULT_FRAME, p.get_y()*DEFAULT_FRAME, DEFAULT_FRAME, DEFAULT_FRAME});
         w.show();
+        m.save("res.map");
     }
     SDL_Quit();
     return 0;

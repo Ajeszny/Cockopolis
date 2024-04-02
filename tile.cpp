@@ -27,5 +27,9 @@ tile_saveable Tile::get_tile_info() {
 }
 
 void Tile::increment() {
+    if (_hood.get_tile_info().type == hood_card_descr::KING) {
+        _hood.set_type(hood_card_descr::NONE);
+        return;
+    }
     _hood.set_type((hood_card_descr::hood_type)(_hood.get_tile_info().type + 1));
 }

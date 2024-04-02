@@ -51,3 +51,9 @@ SDL_Point Window::poll_input() const {
     }
     return {0, 0};
 }
+
+void Window::edit(Map& m, size_t x, size_t y) {
+    if ((_event.type == SDL_KEYDOWN&&_event.key.keysym.sym == SDLK_SPACE)) {
+        m[y][x].increment();
+    }
+}

@@ -10,6 +10,7 @@
 #include <SDL2/SDL_image.h>
 #include <vector>
 #include <string>
+#include <exception>
 
 #define NUM_HORIZONTAL_FRAMES 10
 #define NUM_VERTICAL_FRAMES 8
@@ -21,6 +22,8 @@ struct __attribute__((packed)) tile_saveable {
 };
 
 struct __attribute__((packed)) map_file {
+    size_t x;
+    size_t y;
   tile_saveable tiles[NUM_VERTICAL_FRAMES][NUM_HORIZONTAL_FRAMES];
 };
 
@@ -36,19 +39,23 @@ namespace hood_card_descr {
 
     enum hood_type {
         NONE=0,
-        ACE,
-        TWO,
-        THREE,
-        FOUR,
-        FIVE,
-        SIX,
-        SEVEN,
-        EIGHT,
-        NINE,
-        TEN,
-        JACK,
-        QUEEN,
-        KING
+        ACE,//barracks
+        TWO,//tower
+        THREE,//farm
+        FOUR,//market
+        FIVE,//temple
+        SIX,//workshop
+        SEVEN,//castle
+        EIGHT,//tavern
+        NINE,//home
+        TEN,//agora
+        JACK,//agora
+        QUEEN,//agora
+        KING//agora
     };
 }
+
+class file_does_not_exist:std::exception {
+
+};
 #endif //COCKOPOLIS_INCLUDES_H

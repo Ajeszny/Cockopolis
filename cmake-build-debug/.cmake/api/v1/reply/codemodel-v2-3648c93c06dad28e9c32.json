@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/ajeszny/CLionProjects/Cockopolis/cmake-build-debug",
-		"source" : "/home/ajeszny/CLionProjects/Cockopolis"
+		"build" : "/home/ajeszny/CLionProjects/map_editor/cmake-build-debug",
+		"source" : "/home/ajeszny/CLionProjects/map_editor"
 	},
 	"version" : 
 	{

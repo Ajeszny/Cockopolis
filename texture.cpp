@@ -24,4 +24,11 @@ SDL_Rect *Texture::get_rect() {
     return &_area;
 }
 
+void Texture::change_color(uint8_t r, uint8_t g, uint8_t b) {
+    int err = SDL_SetTextureColorMod(_texture, r, g, b);
+    if (err == -1) {
+        printf("WSZYSTKO POSZŁO W PIZDĘ!!! %s", SDL_GetError());
+    }
+}
+
 

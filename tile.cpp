@@ -33,3 +33,12 @@ void Tile::increment() {
     }
     _hood.set_type((hood_card_descr::hood_type)(_hood.get_tile_info().type + 1));
 }
+
+void Tile::realign(hood_card_descr::hood_color n) {
+    _hood.set_color(n);
+}
+
+const char *Tile::get_owner() {
+    return _hood.get_owner();
+}
+

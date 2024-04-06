@@ -6,6 +6,7 @@
 #define COCKOPOLIS_WINDOW_H
 #include "includes.h"
 #include "texture.h"
+#include "player.h"
 #include "map.h"
 #define DEFAULT_W 640
 #define DEFAULT_H 512
@@ -21,9 +22,10 @@ public:
     Window(int width, int height);
     ~Window();
     void show();
-    void edit(Map& m, size_t x, size_t y);
+    void edit(Map& m, Player& p);
     [[nodiscard]] bool listen_for_end() const;
     void push(const string& path, SDL_Rect pos);
+    void cpush(const string& path, SDL_Rect pos, uint8_t r, uint8_t g, uint8_t b);
     SDL_Point poll_input() const;
 };
 

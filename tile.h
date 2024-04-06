@@ -18,8 +18,10 @@ public:
     const char* get_path();
     void set_type(hood_card_descr::hood_type tp);
     const char* get_hood();
+    const char* get_owner();
     tile_saveable get_tile_info();
     void increment();
+    void realign(hood_card_descr::hood_color n);
 };
 
 

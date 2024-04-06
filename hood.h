@@ -15,8 +15,10 @@ private:
 public:
     Hood(hood_card_descr::hood_color suit=hood_card_descr::UNALIGNED, hood_card_descr::hood_type t=hood_card_descr::NONE);
     const char* get_path();
+    const char* get_owner();
     void set_type(hood_card_descr::hood_type tp);
     tile_saveable get_tile_info();
+    void set_color(hood_card_descr::hood_color c);
 };
 
 

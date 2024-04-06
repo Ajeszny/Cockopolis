@@ -29,7 +29,7 @@ Map::Map(const char *path) {
     for (int i = 0; i < f.y; ++i) {
         _map.emplace_back();
         for (int j = 0; j < f.x; ++j) {
-            _map[i].emplace_back(f.tiles[i][j].tpath, (hood_card_descr::hood_type)f.tiles[i][j].type, (hood_card_descr::hood_color)f.tiles[i][j].color);
+            _map[i].emplace_back("grassland.png", (hood_card_descr::hood_type)f.tiles[i][j].type, (hood_card_descr::hood_color)f.tiles[i][j].color);
         }
     }
     fclose(fp);

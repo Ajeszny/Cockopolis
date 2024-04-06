@@ -4,6 +4,7 @@
 
 #include "hood.h"
 
+
 const char* card_paths[] = {"grassland.png"
                             ,"barracks.png"
                             ,"tower.png"
@@ -18,6 +19,14 @@ const char* card_paths[] = {"grassland.png"
                             ,"agora2.png"
                             ,"agora3.png"
                             ,"agora4.png"};
+
+const char* alignments[] = {
+        "hearts.png",
+        "diamonds.png",
+        "spades.png",
+        "clubs.png",
+        "unaligned.png"
+};
 
 Hood::Hood(hood_card_descr::hood_color suit, hood_card_descr::hood_type t) {
     _col = suit;
@@ -40,4 +49,13 @@ tile_saveable Hood::get_tile_info() {
     t.color = (int)_col;
     t.type = (int)_tp;
     return t;
+}
+
+void Hood::set_color(hood_card_descr::hood_color c) {
+    printf("%i", _col);
+    _col = c;
+}
+
+const char *Hood::get_owner() {
+    return alignments[_col];
 }

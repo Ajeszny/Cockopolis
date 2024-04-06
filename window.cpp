@@ -52,8 +52,14 @@ SDL_Point Window::poll_input() const {
     return {0, 0};
 }
 
-void Window::edit(Map& m, size_t x, size_t y) {
+void Window::edit(Map& m, Player& p) {
     if ((_event.type == SDL_KEYDOWN&&_event.key.keysym.sym == SDLK_SPACE)) {
-        m[y][x].increment();
+        printf("a");
+        p.challenge(m);
     }
+}
+
+void Window::cpush(const string &path, SDL_Rect pos, uint8_t r, uint8_t g, uint8_t b) {
+    textures.emplace_back(_renderer, path.c_str(), pos.x, pos.y, pos.w, pos.h);
+    textures[textures.size() - 1].change_color(r, g, b);
 }

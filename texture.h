@@ -15,6 +15,7 @@ public:
     ~Texture();
     SDL_Texture* get_texture();
     SDL_Rect* get_rect();
+    void change_color(uint8_t r, uint8_t g, uint8_t b);
 };
 
 

@@ -10,11 +10,6 @@ SDL_Point& operator+=(SDL_Point& l, SDL_Point& r) {
     return l;
 }
 
-Player::Player() {
-    _cursor = {0, 0};
-    _tpath = "choice.png";
-}
-
 int Player::move(SDL_Point dir) {
     switch ((_cursor.x ==0&&dir.x < 0)||(_cursor.y ==0&&dir.y < 0)||(_cursor.x ==(NUM_HORIZONTAL_FRAMES-1)&&dir.x > 0)||(_cursor.y ==(NUM_VERTICAL_FRAMES-1)&&dir.y > 0)) {
         case 1:
@@ -33,4 +28,18 @@ int Player::get_x() const {
 
 int Player::get_y() const {
     return _cursor.y;
+}
+
+void Player::challenge(Map& m) {
+    m[_cursor.y][_cursor.x].realign(_col);
+}
+
+Player::Player(hood_card_descr::hood_color team) {
+    _cursor = {0, 0};
+    _tpath = "choice.png";
+    _col = team;
+}
+
+hood_card_descr::hood_color Player::get_alignment() {
+    return _col;
 };

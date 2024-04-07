@@ -16,6 +16,8 @@ add_executable(Cockopolis main.cpp
         tile.cpp
         tile.h
         hood.cpp
-        hood.h)
+        hood.h
+        character.cpp
+        character.h)
 
 target_link_libraries(Cockopolis "SDL2main" "SDL2" "SDL2_image")

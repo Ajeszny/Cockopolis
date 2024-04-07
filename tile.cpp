@@ -8,6 +8,7 @@ Tile::Tile(const char* path, hood_card_descr::hood_type t, hood_card_descr::hood
     _tpath = path;
     _owner = nullptr;
     _hood = Hood(h, t);
+    _c = nullptr;
 }
 
 const char *Tile::get_path() {
@@ -40,5 +41,13 @@ void Tile::realign(hood_card_descr::hood_color n) {
 
 const char *Tile::get_owner() {
     return _hood.get_owner();
+}
+
+void Tile::setchar(Character *c) {
+    _c = c;
+}
+
+Character *Tile::getchar() {
+    return _c;
 }
 

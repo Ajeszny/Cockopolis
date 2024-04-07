@@ -52,10 +52,14 @@ SDL_Point Window::poll_input() const {
     return {0, 0};
 }
 
-void Window::edit(Map& m, Player& p) {
+void Window::edit(Map& m, Player& p) const {
     if ((_event.type == SDL_KEYDOWN&&_event.key.keysym.sym == SDLK_SPACE)) {
-        printf("a");
-        p.challenge(m);
+        if (p.getchar()) {
+                p.getchar()->set_pos({p.get_x(), p.get_y()});
+                p.getchar()->claim(m);
+            return;
+        }
+        p.select(*m[p.get_y()][p.get_x()].getchar());
     }
 }
 

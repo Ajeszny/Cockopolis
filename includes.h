@@ -15,6 +15,7 @@
 #define NUM_HORIZONTAL_FRAMES 10
 #define NUM_VERTICAL_FRAMES 8
 
+
 struct __attribute__((packed)) tile_saveable {
     char tpath[256];
     int color;
@@ -54,6 +55,17 @@ namespace hood_card_descr {
         KING//agora
     };
 }
+
+enum PCharacter {
+    H_KING,
+    H_QUEEN,
+    H_JACK,
+    R_JOKER,
+    S_KING,
+    S_QUEEN,
+    S_JACK,
+    B_JOKER
+};
 
 class file_does_not_exist:std::exception {
 

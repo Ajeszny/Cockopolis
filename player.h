@@ -13,6 +13,11 @@ private:
     SDL_Point _cursor;
     string _tpath;
     hood_card_descr::hood_color _col;
+    ///REALLY FUCKING INPORTANT:\n
+    ///If you ever, EVER change the characters variable, _select WILL become unusable due to reallocation.
+    ///Take this into consideration as the bugs produced by that are game-crushing
+    ///(It took me a day to figure this out)
+    ///UPD I use linked list now and it may've solved the problems with allocation
     Character* _select;
 public:
     Player(hood_card_descr::hood_color team);
@@ -28,8 +33,11 @@ public:
     int get_y() const;
     void challenge(Map& m);
     Character* getchar();
+    void setchar(Character* ch);
 
     hood_card_descr::hood_color get_alignment();
+///Я ПАНК МНЕ ПОХУЙ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    std::list<Character> characters;
 };
 
 

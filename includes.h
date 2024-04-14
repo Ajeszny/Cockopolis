@@ -11,6 +11,7 @@
 #include <vector>
 #include <string>
 #include <exception>
+#include <list>
 
 #define NUM_HORIZONTAL_FRAMES 10
 #define NUM_VERTICAL_FRAMES 8

@@ -59,3 +59,7 @@ void Hood::set_color(hood_card_descr::hood_color c) {
 const char *Hood::get_owner() {
     return alignments[_col];
 }
+
+hood_card_descr::hood_color Hood::get_color() {
+    return _col;
+}

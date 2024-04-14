@@ -19,6 +19,7 @@ public:
     void set_type(hood_card_descr::hood_type tp);
     tile_saveable get_tile_info();
     void set_color(hood_card_descr::hood_color c);
+    hood_card_descr::hood_color get_color();
 };
 
 

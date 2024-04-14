@@ -51,3 +51,11 @@ void Map::save(const char *path) {
     fwrite(&f, sizeof(f), 1, fp);
     fclose(fp);
 }
+
+void Map::update() {
+    for (int i = 0; i < _map.size(); ++i) {
+        for (int j = 0; j < _map[i].size(); ++j) {
+            _map[i][j].update();
+        }
+    }
+}

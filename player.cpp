@@ -43,6 +43,7 @@ void Player::challenge(Map& m) {
 }
 
 Player::Player(hood_card_descr::hood_color team) {
+
     _cursor = {0, 0};
     _tpath = "choice.png";
     _col = team;
@@ -75,4 +76,8 @@ void Player::select(Character &c) {
 
 Character *Player::getchar() {
     return _select;
-};
+}
+
+void Player::setchar(Character *ch) {
+    _select = ch;
+}

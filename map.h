@@ -15,6 +15,7 @@ public:
     Map(const char* path);
     void save(const char* path);
     std::vector<Tile>& operator[](size_t at);
+    void update();
 };
 
 

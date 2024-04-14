@@ -50,5 +50,14 @@ Character::Character(PCharacter type, hood_card_descr::hood_color owner, Map& m)
     _owner = owner;
     _pos = {0, 0};
     _map = &m;
+    _actions = 0;
     m[0][0].setchar(this);
+}
+
+void Character::update() {
+    _actions = 0;
+}
+
+void Character::action() {
+    ++_actions;
 }

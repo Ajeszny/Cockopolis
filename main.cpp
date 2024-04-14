@@ -10,9 +10,9 @@ uint8_t blues[4] = {0};
 int main(int argc, char* argv[]) {
     SDL_Init(SDL_INIT_EVERYTHING);
     Window w(DEFAULT_W, DEFAULT_H);
-    Player p(hood_card_descr::HEARTS);
+    Player p(hood_card_descr::SPADES);
     Map m("res.map");
-    Character king(H_KING, hood_card_descr::HEARTS, m);
+    Character king(S_KING, hood_card_descr::SPADES, m);
     while(w.listen_for_end()) {
         w.edit(m, p);
         p.move(w.poll_input());
@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
         }
         w.cpush(p.get_texture_path(), {p.get_x()*DEFAULT_FRAME, p.get_y()*DEFAULT_FRAME, DEFAULT_FRAME, DEFAULT_FRAME}, reds[p.get_alignment()], greens[p.get_alignment()], blues[p.get_alignment()]);
         w.show();
-        //m.save("res.map");
+        m.update();
     }
     SDL_Quit();
     return 0;

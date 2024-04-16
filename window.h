@@ -26,6 +26,8 @@ public:
     [[nodiscard]] bool listen_for_end() const;
     void push(const string& path, SDL_Rect pos);
     void cpush(const string& path, SDL_Rect pos, uint8_t r, uint8_t g, uint8_t b);
+
+    [[maybe_unused]] int ask_to_end_turn() const;
     SDL_Point poll_input() const;
 };
 

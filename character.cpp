@@ -51,6 +51,7 @@ Character::Character(PCharacter type, hood_card_descr::hood_color owner, Map& m)
     _pos = {0, 0};
     _map = &m;
     _actions = 0;
+    limit = (type != B_JOKER&&type != R_JOKER) + (type == B_JOKER||type== R_JOKER) * 2;
     m[0][0].setchar(this);
 }
 
@@ -60,4 +61,16 @@ void Character::update() {
 
 void Character::action() {
     ++_actions;
+}
+
+hood_card_descr::hood_color Character::get_owner() {
+    return _owner;
+}
+
+bool Character::can_move() const {
+    return (_actions <= limit);
+}
+
+void Character::reset_action_limit() {
+    _actions = 0;
 }

@@ -14,6 +14,7 @@ private:
     hood_card_descr::hood_color _owner;
     Map* _map;
     int _actions;
+    int limit;
 public:
     ///Takes care of:\n
     ///Character type\n
@@ -31,6 +32,9 @@ public:
     ///Called during EVERY action\n
     ///Increases character's _actions counter
     void action();
+    bool can_move() const;
+    void reset_action_limit();
+    hood_card_descr::hood_color get_owner();
 };
 
 

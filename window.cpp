@@ -22,6 +22,7 @@ Window::Window(int width, int height) {
     _renderer = SDL_CreateRenderer(_window, -1, 0);
 }
 
+
 void Window::show() {
     SDL_PollEvent(&_event);
     SDL_RenderClear(_renderer);
@@ -76,7 +77,9 @@ void Window::edit(Map &m, Player &p) const {
             }
             return;
         }
-        p.select(*m[p.get_y()][p.get_x()].getchar());
+        if (m[p.get_y()][p.get_x()].getchar()&&
+                m[p.get_y()][p.get_x()].getchar()->can_move()
+        &&m[p.get_y()][p.get_x()].getchar()->get_owner() == p.get_alignment()) p.select(*m[p.get_y()][p.get_x()].getchar());
     }
     if ((_event.type == SDL_KEYDOWN && _event.key.keysym.sym == SDLK_c) && p.getchar()) {
         if (m[p.get_y()][p.get_x()].take_hero()) {
@@ -114,4 +117,8 @@ void Window::edit(Map &m, Player &p) const {
 void Window::cpush(const string &path, SDL_Rect pos, uint8_t r, uint8_t g, uint8_t b) {
     textures.emplace_back(_renderer, path.c_str(), pos.x, pos.y, pos.w, pos.h);
     textures[textures.size() - 1].change_color(r, g, b);
+}
+
+int Window::ask_to_end_turn() const {
+    return (_event.type == SDL_KEYDOWN && _event.key.keysym.sym == SDLK_g) * 1 + (_event.type == SDL_QUIT) * 2;
 }
